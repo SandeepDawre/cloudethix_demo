@@ -1,0 +1,36 @@
+https://releases.hashicorp.com/
+
+--------------------------
+Thu 08 Dec 2022 Terraform
+--------------------------
+	➖  What is Terraform
+	➖  What is IAC
+	➖  Terraform Installation 
+	➖  Terraform Environment Setup  ( WSL2 / AWS CLI / AWS IAM USER / AWS CONFIGURE )
+
+
+--------------------------
+Mon 12 Dec 2022 Terraform
+--------------------------
+	➖  Terraform Basic commands ( INIT , PLAN , APPLY , DESTROY ) 
+	➖  Terraform Providers 
+	➖  Terraform Providers versioning 
+	➖  Terraform Create EC2 Instance    ---- Requirement 
+	➖  Terraform Create Security Group
+	➖  Terraform Create GitHub Repository
+	➖  Terraform Create Multiple Branches 
+
+
+--------------------------
+Tue 13 Dec 2022 Terraform
+--------------------------
+	➖  Terraform Variables Data Types
+	➖  Variables and Outputs
+		➖  Input Variables
+		➖  Output Values 
+		➖  Local Values
+	➖  Referencing Resource Attributes
+	➖  Ways to Variable Assignment
+	➖  Difference between varibales.tf and custom.tfvars
+	➖  Terraform Environment varibales.
+			https://developer.hashicorp.com/terraform/cli/config/environment-variables#environment-variables
