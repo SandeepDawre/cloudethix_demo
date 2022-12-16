@@ -12,12 +12,12 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "my_ec2_from_list" {
+resource "aws_instance" "my_ec2_from_map" {
   ami           = "ami-0b0dcb5067f052a63"
   instance_type = var.my_map["medium"]
 }
 
-resource "aws_instance" "my_ec2_from_map" {
+resource "aws_instance" "my_ec2_from_list" {
   ami           = "ami-0b0dcb5067f052a63"
-  instance_type = var.my_list["t2.small"]
+  instance_type = var.my_list[1]
 }

@@ -15,11 +15,11 @@ provider "aws" {
 resource "aws_instance" "my_ec2_dev" {
   ami           = var.ami_id
   instance_type = var.dev_type
-  count = var.istest == true ? 3 : 0
+  count = var.is_dev == "YES" ? 3 : 0
 }
 
 resource "aws_instance" "my_ec2_prod" {
   ami           = var.ami_id
-  instance_type = var.dev_type
-  count = var.istest == false ? 1 : 0
+  instance_type = var.prod_type
+  count = var.is_dev == "NO" ? 1 : 0
 }

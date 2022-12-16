@@ -19,12 +19,12 @@ resource "aws_instance" "my_ec2" {
 }
 
 resource "aws_iam_user" "lb" {
-  name = "loadbalancer.${count.index}"
+  name = "cloudethix.${count.index}"
   path = "/system/"
   count = 3
 }
 
 resource "aws_iam_group" "developers" {
-  name = var.iam_group_names[count.index]
+  name = var.iam_group_names[count]
   path = "/users/"
 }

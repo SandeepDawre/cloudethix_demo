@@ -34,3 +34,12 @@ Tue 13 Dec 2022 Terraform
 	➖  Difference between varibales.tf and custom.tfvars
 	➖  Terraform Environment varibales.
 			https://developer.hashicorp.com/terraform/cli/config/environment-variables#environment-variables
+
+
+--------------------------
+Fri 16 Dec 2022 Terraform
+--------------------------
+	➖  Read Data From Map & List
+	➖  Terraform Count & Count Index
+	➖  Condition in Terraform
+	➖  Terraform Data  Sources Block. 
