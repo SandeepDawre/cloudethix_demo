@@ -1,0 +1,15 @@
+https://medium.com/vmacwrites/tools-to-visualize-your-terraform-plan-d421c6255f9f
+
+terraform graph -type=plan | dot -Tpng > graph.png
+
+
+terraform graph > graph.dot
+yum install graphviz
+cat graph.dot | dot -Tsvg > graph.svg
+
+
+https://hieven.github.io/terraform-visual/
+
+
+$ terraform plan -out=plan.out
+$ terraform show -json plan.out > plan.json

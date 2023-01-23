@@ -3,3 +3,4 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+00_HANEE_ANNA/*

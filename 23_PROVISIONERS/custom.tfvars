@@ -1,0 +1,5 @@
+ami_id = "ami-0b5eea76982371e91"
+instance_type = "t2.micro"
+key_name = "cloudethix-ssh-key"
+private_key_path = "/root/.ssh/id_rsa"
+public_key_path = "/root/.ssh/id_rsa.pub"

@@ -53,3 +53,18 @@ Mon 19 Dec 2022 Terraform
 	➖  Terraform Code Validation
 	➖  Terraform Resources in Multiple Files
 	➖  Terraform Dyanamic Block
+
+
+--------------------------
+Thu 22 Dec 2022 Terraform
+--------------------------
+	➖  Terraform Multiple Providers.
+	➖  Terraform Functions. 
+	➖  Random Password in Terraform.
+	➖  Terraform Resources Tainting.
+	➖  Terraform Splat Expression.
+	➖  Terraform Graph.
+	➖  Terraform Plan to File.
+	➖  Comments in Terraform
+	➖  for_each in Terraform
+
