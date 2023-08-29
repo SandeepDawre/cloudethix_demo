@@ -18,6 +18,15 @@ resource "aws_iam_user" "lb" {
   path = "/system/"
 }
 
-output "arns" {
+output "arns1" {
+  value = aws_iam_user.lb[0].arn
+}
+output "arns2" {
+  value = aws_iam_user.lb[1].arn
+}
+output "arns3" {
+  value = aws_iam_user.lb[2].arn
+}
+output "arns_all" {
   value = aws_iam_user.lb[*].arn
 }

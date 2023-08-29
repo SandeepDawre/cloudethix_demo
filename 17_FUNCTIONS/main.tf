@@ -64,7 +64,7 @@ resource "aws_key_pair" "loginkey" {
 }
 
 resource "aws_instance" "app-dev" {
-   ami = lookup(var.ami,var.region)
+   ami = lookup(var.ami, var.region)
    instance_type = "t2.micro"
    key_name = aws_key_pair.loginkey.key_name
    count = 2

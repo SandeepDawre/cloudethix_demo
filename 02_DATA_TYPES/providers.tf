@@ -8,9 +8,5 @@ terraform {
 }
 
 provider "aws" {
-  region     = var.region
-}
-
-resource "aws_eip" "lb" {
-  vpc      = var.is_true
+  region     = "us-east-1"
 }

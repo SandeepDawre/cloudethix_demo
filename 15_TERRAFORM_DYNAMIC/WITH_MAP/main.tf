@@ -19,13 +19,13 @@ resource "aws_security_group" "dynamicsg" {
 
   dynamic "ingress" {
     for_each = var.aws_sg
-    iterator = in_rule
+    iterator = incoming
     content {
-    	  description = in_rule.value.description
-      	from_port   = in_rule.value.port
-      	to_port     = in_rule.value.port
-      	protocol    = in_rule.value.protocol
-      	cidr_blocks = in_rule.value.cidr_blocks
+    	  description = incoming.value.description
+      	from_port   = incoming.value.port
+      	to_port     = incoming.value.port
+      	protocol    = incoming.value.protocol
+      	cidr_blocks = incoming.value.cidr_blocks
     }
   }
 

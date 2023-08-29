@@ -11,6 +11,5 @@ variable "my_map" {
     small = "t2.small"
     medium = "t2.medium"
     large = "t2.large"
-     
    }
 }

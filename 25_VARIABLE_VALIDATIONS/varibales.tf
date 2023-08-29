@@ -6,7 +6,7 @@ variable "instance_type" {
     description = "Please Provide Instance Type."
     validation {
       condition = contains(["t2.micro", "t2.small", "t2.medium", "t2.large"],var.instance_type)
-      error_message = "OOOOOO BHAI SAHAB ......."
+      error_message = "Please provide one of these valid ec2 instace type : t2.micro, t2.small, t2.medium, t2.large"
     }
   
 }

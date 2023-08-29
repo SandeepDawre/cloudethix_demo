@@ -25,6 +25,7 @@ resource "aws_iam_user" "lb" {
 }
 
 resource "aws_iam_group" "developers" {
-  name = var.iam_group_names[count]
+  count = length(var.iam_group_names)
+  name = "${count.index}"
   path = "/users/"
 }

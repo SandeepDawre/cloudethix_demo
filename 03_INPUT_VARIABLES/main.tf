@@ -1,38 +1,24 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "4.46.0"
-    }
-  }
-}
-
-provider "aws" {
-  region     = "us-east-1"
-}
-
-
 resource "aws_security_group" "var_demo" {
-  name        = "Cloudethix-variables"
+  name        = var.sg_name
 
   ingress {
-    from_port   = 443
-    to_port     = 443
+    from_port   = var.sg_https_port
+    to_port     = var.sg_https_port
     protocol    = "tcp"
-    cidr_blocks = [var.vpn_ip]
+    cidr_blocks = [var.vpc_cidr_block]
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = var.sg_http_port
+    to_port     = var.sg_http_port
     protocol    = "tcp"
-    cidr_blocks = [var.vpn_ip]
+    cidr_blocks = [var.vpc_cidr_block]
   }
 
   ingress {
-    from_port   = 53
-    to_port     = 53
+    from_port   = var.sg_dns_port
+    to_port     = var.sg_dns_port
     protocol    = "tcp"
-    cidr_blocks = [var.vpn_ip]
+    cidr_blocks = [var.vpc_cidr_block]
   }
 }

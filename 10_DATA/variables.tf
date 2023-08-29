@@ -1,6 +1,6 @@
 variable "type" {
-  type = string 
+  type = string
 }
 variable "region" {
-  type = string 
+  type = string
 }

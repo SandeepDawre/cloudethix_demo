@@ -1,21 +1,19 @@
+
 terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "4.51.0"
+      version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-  # Configuration options
+  region     = "us-east-1"
 }
 
-
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-1bf43b66"
+resource "aws_security_group" "this_sg" {
+  name        = "ec2-sg"
 
   ingress {
     description      = "TLS from VPC"
@@ -25,6 +23,13 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
   egress {
     from_port        = 0
     to_port          = 0
@@ -32,7 +37,4 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "allow_tls"
-  }
 }

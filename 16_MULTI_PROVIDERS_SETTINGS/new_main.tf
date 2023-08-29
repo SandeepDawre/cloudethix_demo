@@ -35,4 +35,5 @@ resource "aws_db_instance" "example" {
 
 output "myrdspasswd" {
   value = random_password.password.result
+  sensitive = true
 }

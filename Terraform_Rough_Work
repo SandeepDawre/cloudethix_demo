@@ -1,0 +1,269 @@
+--------------------------
+Sat 04 Feb 2023 Terraform    
+--------------------------
+	➖  What is Terraform
+	➖  What is IaC
+	➖  Terraform Installation 
+	➖  Terraform Environment Setup 
+	     ➖ WSL2 
+		      	AWS CLI
+		      	Terraform CLI
+		      	AWS CONFIGURE
+	     ➖ AWS IAM USER And KEYS 
+	     ➖ VS_CODE
+	➖  Terraform Basic commands 
+			INIT / PLAN / APPLY / DESTROY
+	➖  Terraform Providers 
+	➖  Terraform Create 
+			IAM ROLE
+			EC2 Instance
+			Security Group  
+
+docker save -o c:/myfile.tar centos:16
+
+atg-cube:v1.31.56
+
+
+509002973204.dkr.ecr.us-east-1.amazonaws.com/cube-api-repo:v0.31.57.00
+rifatshaikh156@gmail.com
+blockchainvip005@gmail.com
+
+
+Terraform is an open-source infrastructure as code software tool that enables you to safely and predictably create, change, and improve infrastructure.
+
+Terraform Environment Setup
+
+
+
+	AWS CLI ---  AZ CLI 			---- Local Machine  		-- WSL (Ubuntu)
+    Terraform 						---- Local Machine  		-- WSL (Ubuntu)
+
+    VS_CODE							---- Local Machine  		-- Windows 11
+
+    IAM User --- Service Principal  ---- AWS Cloud 
+    SEC/ACC Keys 
+
+    AWS CONFIGURE ---
+
+
+
+
+Windows  https://code.visualstudio.com/download
+
+
+WSL (Ubuntu)
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+
+
+Windows 11 
+	VS_CODE
+	WSL2 (UBUNTU) 
+		--> AWS CLI
+		--> Terraform 
+
+AWS 
+	Region ---> Asia Pacific (Mumbai) ---> ap-south-1
+
+	IAM USER 
+		---> Search for IAM 
+				---> users 
+					---> Create User 
+							---> User name :- automation 
+							---> Attach policies directly
+									---> Select AdministratorAccess 
+
+
+Access key ID
+AKIASU36APD6GEVMTQOT
+
+
+Secret access key
+AJZUz2Bkk1D6I/YlxRCcFX40yZ+1+2Ykcgt6GyS1
+
+
+
+Windows 11 --- vscode 
+
+windows 11 --- wsl2 
+
+AWS CLOUD
+		---- Create IAM User
+		---- Create Access Key and Secret Key 
+
+wsl2 ---Ubuntu 
+		---- AWS CLI  Installation 
+		---- Terraform CLI Installation
+		---- AWS configure command 
+
+
+root:/# aws configure
+
+AWS Access Key ID [None]: AKIASU36APD6GEVMTQOT
+AWS Secret Access Key [None]: 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
+Default region name [None]: ap-south-1
+Default output format [None]: json
+
+whoami
+
+/root/.aws/config
+		[default]
+		region = ap-south-1
+		output = json 
+
+/root/.aws/credentials
+		[default]
+		aws_access_key_id = AKIASU36APD6GEVMTQOT
+		aws_secret_access_key = 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
+
+
+
+Windows 11
+	VSCode
+	Terminal 
+	WSL2 --Ubuntu
+			---> AWS CLI 
+			---> Terraform CLI 
+			---> AWS CONFIGURE COMMAND
+
+	Browser 
+		--- AWS login page
+			---> IAM User
+				---> Create Access Key and Secret Key 
+
+
+
+Terraform + AWS / AZURE / GCP
+
+
+ # terraform init -plugin-dir=/root/terraform.d/
+
+
+# vim /root/.terraformrc
+
+plugin_cache_dir   = "$HOME/.terraform.d/plugin-cache"
+disable_checkpoint = true
+
+
+ terraform init
+  terraform plan
+   terraform apply
+
+plugin-cache/
+└── registry.terraform.io
+    └── hashicorp
+
+        ├── aws
+        │    ├── 4.46.0
+        │    │    └── linux_amd64
+        │    │        └── terraform-provider-aws_v4.46.0_x5
+        │    ├── 4.51.0
+        │    │    └── linux_amd64
+        │    │       └── terraform-provider-aws_v4.51.0_x5
+        │    └── 4.53.0
+        │        └── linux_amd64
+        │           └── terraform-provider-aws_v4.53.0_x5
+        ├── azurerm
+        │     └── 3.39.1
+        │         └── linux_amd64
+        │             └── terraform-provider-azurerm_v3.39.1_x5
+        ├── google
+        │    └── 4.49.0
+        │        └── linux_amd64
+        │            └── terraform-provider-google_v4.49.0_x5
+        ├── null
+        │    └── 3.2.1
+        │        └── linux_amd64
+        │            └── terraform-provider-null_v3.2.1_x5
+        └── random
+            └── 3.4.3
+                └── linux_amd64
+                    └── terraform-provider-random_v3.4.3_x5
+
+
+https://developer.hashicorp.com/terraform/language/expressions/types
+
+string   : 
+		a sequence of Unicode characters representing some text, like "hello".
+
+number  : 
+		a numeric value. The number type can represent both whole numbers like 15 and fractional values like 6.283185.
+
+bool  : 
+		a boolean value, either true or false. bool values can be used in conditional logic.
+
+list (or tuple) : 
+		a sequence of values, like ["us-west-1a", "us-west-1c"]. Elements in a list or tuple are identified by consecutive whole numbers, starting with zero.
+
+map (or object) : 
+		a group of values identified by named labels, like {name = "Mabel", age = 52}.
+
+
+--------
+main.tf 
+--------
+resource "aws_iam_user" "lb" {
+  name = var.iam_user_name
+  path = var.iam_user_path
+}
+
+
+resource "aws_instance" "automation_ec2" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+}
+
+resource "aws_security_group" "automation_sg" {
+  name        = var.sg_name
+  vpc_id      = var.vpc_id
+}
+
+
+
+--------
+customs.tfvars 
+--------
+
+iam_user_name="automation"
+iam_user_path="/system/"
+ami_id="ami-01a4f99c4ac11b03c"
+instance_type="t2.micro"
+sg_name="automation_sg"
+vpc_id="vpc-e352bd88" vpc-1bf43b66
+
+
+
+
+
+  + resource "aws_eip" "lb" {
+      + allocation_id        = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = (known after apply)
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags_all             = (known after apply)
+      + vpc                  = true
+    }
+
+
+    INPUT 
+    OUTPUT
+    LOCAL"S"
+
+
+
+    Create 2 Ec2 instanc

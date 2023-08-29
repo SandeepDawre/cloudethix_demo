@@ -31,8 +31,8 @@ Tue 13 Dec 2022 Terraform
 		➖  Local Values
 	➖  Referencing Resource Attributes
 	➖  Ways to Variable Assignment
-	➖  Difference between varibales.tf and custom.tfvars
-	➖  Terraform Environment varibales.
+	➖  Difference between variables.tf and custom.tfvars
+	➖  Terraform Environment variables.
 			https://developer.hashicorp.com/terraform/cli/config/environment-variables#environment-variables
 
 
@@ -42,7 +42,7 @@ Fri 16 Dec 2022 Terraform
 	➖  Read Data From Map & List
 	➖  Terraform Count & Count Index
 	➖  Condition in Terraform
-	➖  Terraform Data  Sources Block. 
+	➖  Terraform Data Sources Block. 
 
 
 --------------------------
@@ -52,7 +52,7 @@ Mon 19 Dec 2022 Terraform
 	➖  Terraform file formatting
 	➖  Terraform Code Validation
 	➖  Terraform Resources in Multiple Files
-	➖  Terraform Dyanamic Block
+	➖  Terraform Dynamic Block
 
 
 --------------------------
@@ -68,3 +68,69 @@ Thu 22 Dec 2022 Terraform
 	➖  Comments in Terraform
 	➖  for_each in Terraform
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+											FROM VIDEOS 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------
+Wed 14 Dec 2022
+TERRAFORM
+--------------------------
+	➖  Terraform Variables Data Types
+	➖  Variables and Outputs
+	➖  Input Variables
+	➖  Output Values
+	➖  Local Values
+	➖  Referencing Resource Attributes
+	➖  Ways to Variable Assignment
+	➖  Difference between variables.tf and custom.tfvars
+	➖  Terraform Environment variables.
+
+--------------------------
+Fri 16 Dec 2022
+TERRAFORM
+--------------------------
+	➖  Read Data From Map & List
+	➖  Terraform Count & Count Index
+	➖  Condition in Terraform
+	➖  Terraform Data Sources Block.
+
+--------------------------
+Mon 19 Dec 2022
+Terraform
+--------------------------
+	➖  Terraform Debug with Environment Variable
+	➖  Terraform file formatting
+	➖  Terraform Code Validation
+	➖  Terraform Resources in Multiple Files
+	➖  Terraform Dynamic Block
+
+--------------------------
+Thu 22 Dec 2022
+Terraform
+--------------------------
+	➖  Terraform Multiple Providers.
+	➖  Random Password in Terraform.
+	➖  Terraform Functions.
+	➖  Terraform Resources Tainting.
+	➖  Terraform Splat Expression.
+	➖  Terraform Graph.
+	➖  Terraform Plan to File.
+	➖  Comments in Terraform
+	➖  for each in Terraform
+
+--------------------------
+Fri 30 Dec 2022
+Terraform
+--------------------------
+	➖  Terraform Provisioners
+	➖  Modules
+	➖  Variables Validation
+	➖  Remote State Management
+	➖  Back-end Configs
+	➖  AWS Credentials Management

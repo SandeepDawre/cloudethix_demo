@@ -1,0 +1,69 @@
+--------------------------
+Sat 04 Feb 2023 Terraform    --- 12 March 2023
+--------------------------
+	➖  What is Terraform
+	➖  What is IaC
+	➖  Terraform Installation 
+	➖  Terraform Environment Setup 
+	     ➖ WSL2 
+		      	AWS CLI
+		      	Terraform CLI
+		      	AWS CONFIGURE
+	     ➖ AWS IAM USER And KEYS 
+	     ➖ VS_CODE
+	➖  Terraform Basic commands 
+			INIT / PLAN / APPLY / DESTROY
+	➖  Terraform Providers 
+	➖  Terraform Create 
+			IAM ROLE
+			EC2 Instance
+			Security Group  
+
+--------------------------
+Sun 05 Feb 2023 Terraform    
+--------------------------
+
+	➖  Terraform CLI Configuration
+	➖  Terraform Variables Data Types
+	➖  Variables and Outputs
+		➖  Input Variables
+		➖  Output Values 
+		➖  Local Values
+	➖  Referencing Resource Attributes
+	➖  Ways to Variable Assignment
+	➖  Difference between variables.tf and custom.tfvars
+	➖  Terraform Environment variables.
+
+
+--------------------------
+Sat 18 Feb 2023 Terraform    
+--------------------------
+
+	➖  Read Data From Map & List
+	➖  Terraform Count & Count Index
+	➖  Condition in Terraform
+	➖  Terraform Data Sources Block.
+	➖  Terraform Debug with Environment Variable
+	➖  Terraform file formatting
+	➖  Terraform Code Validation
+	➖  Terraform Resources in Multiple Files
+	➖  Terraform Dynamic Block
+
+
+--------------------------
+Thu 22 Dec 2022
+Terraform
+--------------------------
+
+	➖  Terraform Multiple Providers.
+	➖  Random Password in Terraform.
+	➖  Terraform Functions.
+	➖  Terraform Resources Tainting.
+	➖  Terraform Splat Expression.
+	➖  Terraform Graph.
+	➖  Terraform Plan to File.
+	➖  Comments in Terraform
+	➖  for each in Terraform
+
+
+	
