@@ -1,6 +1,7 @@
 variable "ami_id" {
   type = string
 }
+
 variable "instance_type" {
     type = string
     description = "Please Provide Instance Type."

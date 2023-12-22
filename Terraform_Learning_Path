@@ -133,4 +133,61 @@ Terraform
 	➖  Variables Validation
 	➖  Remote State Management
 	➖  Back-end Configs
-	➖  AWS Credentials Management
+	➖  AWS Credentials Management  --- STS ASSUME ROLE
+
+
+
+We will learn the Jenkins 
+
+Terraform Pipelines 
+
+
+test-user
+AKIASU36APD6P2OOPR6A
+Y5P3ywdH3TdqbQCrRjKnIpnVeJcexbO9/RbV2wh5
+
+
+USER NAME ---- TEST USER ---- No Permissions
+ROLE NAME ---- TEST ROLE ---- Admin Access (All Access)
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::182263511292:user/test-user"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+
+
+
+aws sts assume-role --role-arn arn:aws:iam::182263511292:role/test-role --role-session-name example-access --profile test-user  
+
+
+
+        "AccessKeyId": "ASIASU36APD6D4OXAZ2J",
+        "SecretAccessKey": "s4GPJMy/6rMWkYho/6v1fWiPjNKsrRS2goj8n8Dp",
+        "SessionToken": "IQoJb3JpZ2luX2VjEM7//////////wEaCXVzLWVhc3QtMSJGMEQCIB0T0omw8h2pjTvo0+vdMwmVe9ZAKly64XWNKohbH7vOAiAN5tMSmztebQCvApbmlmT5Y/JYmQkWJn3epXM7VNGO1iqkAgiH//////////8BEAIaDDE4MjI2MzUxMTI5MiIMhF0BKe2lxxTtrVgHKvgB061GVwgKplT1jXIFn97e0Lq3mB9DzO/bPgTlIF908zZn3I9ExGImbTQ61dWNxcZQx2ZYLsEnbUFfV+7QHbU9ZxwOTs/p0pIRwLTx98ERl5wwKoIpGWCp+w8EfIaRDSPpVjbmDgo72gT5TTxuGPwl8MYfpDg8+pkmbHYtjp0VFv2RiAjpoKmMtlIcTR/q8M25FG4sSG978IqlagT0b5dMzpXUd4gCkig3f/kCYfU4mEJaGj5mL5k4gzd2F+OlxzOKlbDE5GaK2j9XFBFllqaGERdu53pMFRs9KTmODFYFT0RaDZmuxh536QJUV+WNmdeCKaf3dbdj4yAwuaOwoAY6ngGHXBwZt7UdEGYnG5xyq5inL2TPWZZW9kvgRYlXTvnMbT7OI8gY13zpWAKkJxZ+MGMhLHyntV1y7UKpm79OtIcI6Trvn5dc2uiyY6iMQVO3/oseWid03sGdOtPvntYGk9OPV1woqAEidut0ZGYIeBRrCuvy9wJK4u4WfJBgWfdBFw2LfW8eiTdeW8Vx/toa1IZhyf85+MvC16gfc9X6Uw==",
+
+
+$ export AWS_ACCESS_KEY_ID=ASIASU36APD6D4OXAZ2J
+$ export AWS_SECRET_ACCESS_KEY=s4GPJMy/6rMWkYho/6v1fWiPjNKsrRS2goj8n8Dp
+$ export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEM7//////////wEaCXVzLWVhc3QtMSJGMEQCIB0T0omw8h2pjTvo0+vdMwmVe9ZAKly64XWNKohbH7vOAiAN5tMSmztebQCvApbmlmT5Y/JYmQkWJn3epXM7VNGO1iqkAgiH//////////8BEAIaDDE4MjI2MzUxMTI5MiIMhF0BKe2lxxTtrVgHKvgB061GVwgKplT1jXIFn97e0Lq3mB9DzO/bPgTlIF908zZn3I9ExGImbTQ61dWNxcZQx2ZYLsEnbUFfV+7QHbU9ZxwOTs/p0pIRwLTx98ERl5wwKoIpGWCp+w8EfIaRDSPpVjbmDgo72gT5TTxuGPwl8MYfpDg8+pkmbHYtjp0VFv2RiAjpoKmMtlIcTR/q8M25FG4sSG978IqlagT0b5dMzpXUd4gCkig3f/kCYfU4mEJaGj5mL5k4gzd2F+OlxzOKlbDE5GaK2j9XFBFllqaGERdu53pMFRs9KTmODFYFT0RaDZmuxh536QJUV+WNmdeCKaf3dbdj4yAwuaOwoAY6ngGHXBwZt7UdEGYnG5xyq5inL2TPWZZW9kvgRYlXTvnMbT7OI8gY13zpWAKkJxZ+MGMhLHyntV1y7UKpm79OtIcI6Trvn5dc2uiyY6iMQVO3/oseWid03sGdOtPvntYGk9OPV1woqAEidut0ZGYIeBRrCuvy9wJK4u4WfJBgWfdBFw2LfW8eiTdeW8Vx/toa1IZhyf85+MvC16gfc9X6Uw=="
+
+
+
+Terraform WorkSpace 
+
+
+Work    Space
+
+
+dev 
+qa 
+stage
+prod 

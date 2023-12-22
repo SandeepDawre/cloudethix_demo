@@ -23,6 +23,7 @@ resource "aws_instance" "this_ec2_instance" {
    instance_type = var.instance_type
    key_name = aws_key_pair.this_login_key.key_name
 
+
 // REMOTE Provisioner
 
    connection {
@@ -40,7 +41,7 @@ resource "aws_instance" "this_ec2_instance" {
    ]
  }
 
-/*
+
 //Local Provisioner
   provisioner "local-exec" {
     command = "echo ${aws_instance.this_ec2_instance.private_ip} >> /root/private_ips.txt"
@@ -55,12 +56,12 @@ resource "aws_instance" "this_ec2_instance" {
   }
 
 //Handel provisioner Errors
+/*
   provisioner "remote-exec" {
      on_failure = continue
      inline = [
        "sudo yum -y install vimmm"
      ]
  }
-
 */
 }

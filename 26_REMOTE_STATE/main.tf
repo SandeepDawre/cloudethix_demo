@@ -1,5 +1,8 @@
 terraform {
   backend "s3" {
+     //bucket = "cloudethix-terraform-state-bucket007"
+     //key    = "esmail-g/pooja-mam/terraform.tfstate"
+     //region = "us-east-1"
     skip_region_validation = true
     encrypt = true
   }

@@ -8,10 +8,13 @@ terraform {
 }
 
 provider "aws" {
-  
+    # Configuration options
 }
 
 resource "aws_instance" "my_ec2" {
-  ami           = "ami-0b0dcb5067f052a63"
+  ami           = "ami-05c13eab67c5d8861"
   instance_type = "t2.micro"
+  tags = {
+    Name = "HelloWorld"
+  }
 }

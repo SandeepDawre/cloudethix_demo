@@ -1,0 +1,15 @@
+version: '2'
+services:
+    myapp:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      environment:
+        - PORT= 8051
+        - GOOGLE_APPLICATION_CREDENTIALS="blinc-development-qa.json"
+        - PROJECT_ID = "blinc-development-env"
+        - MAX_OUTPUT_TOKEN = 1024
+        - TEMPERATURE = 0.2 
+        - TOP_K = 5
+        - TOP_P = 0.4
+

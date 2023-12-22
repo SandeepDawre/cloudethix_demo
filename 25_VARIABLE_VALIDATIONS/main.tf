@@ -1,9 +1,10 @@
 terraform {
-  backend "s3" {
+/*  backend "s3" {
       bucket = "cloudethix-terraform-state-bucket007"
       key    = "hello/moto/bhai-sahab02/terraform.tfstate"
       region = "us-east-1"
    }
+*/   
   required_providers {
     aws = {
       source = "hashicorp/aws"
