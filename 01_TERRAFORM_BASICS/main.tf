@@ -11,10 +11,36 @@ provider "aws" {
     # Configuration options
 }
 
-resource "aws_instance" "my_ec2" {
-  ami           = "ami-05c13eab67c5d8861"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "HelloWorld"
+#THIS IS FOR SSH KEY
+resource "aws_key_pair" "this_ssh_key" {
+  key_name   = var.SSH_KEY_NAME
+  public_key = var.SSH_PUB_KEY
+}
+
+#THIS IS FOR EC2
+resource "aws_instance" "this_ec2" {
+  ami           = var.AMI_ID
+  instance_type = var.INST_TYPE
+  tags          = var.EC2_TAG
+}
+
+
+#THIS IS FOR SG
+resource "aws_security_group" "this_sg" {
+  name   = var.SG_NAME
+
+  ingress {
+    from_port   = var.HTTP_PORT
+    to_port     = var.HTTP_PORT
+    protocol    = "tcp"
+    cidr_blocks = [var.CIDR_RANGE]
   }
+
+  ingress {
+    from_port   = var.HTTPS_PORT
+    to_port     = var.HTTPS_PORT
+    protocol    = "tcp"
+    cidr_blocks = [var.CIDR_RANGE]
+  }
+
 }
