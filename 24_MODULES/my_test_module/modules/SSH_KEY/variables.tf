@@ -1,6 +1,6 @@
 variable "keyname" {
-  type    = string
+  type = string
 }
 variable "public_key_path" {
-  type    = string
+  type = string
 }

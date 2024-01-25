@@ -26,14 +26,14 @@ Type Conversion Functions
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 locals {
@@ -45,15 +45,15 @@ variable "region" {
 }
 
 variable "tags" {
-  type = list
-  default = ["ce-first-EC2","ce-second-EC2"]
+  type    = list(any)
+  default = ["ce-first-EC2", "ce-second-EC2"]
 }
 
 variable "ami" {
-  type = map
+  type = map(any)
   default = {
-    "us-east-1" = "ami-082b5a644766e0e6f"
-    "us-west-2" = "ami-0d6621c01e8c2de2c"
+    "us-east-1"  = "ami-082b5a644766e0e6f"
+    "us-west-2"  = "ami-0d6621c01e8c2de2c"
     "ap-south-1" = "ami-0470e33cd681b2476"
   }
 }
@@ -64,14 +64,14 @@ resource "aws_key_pair" "loginkey" {
 }
 
 resource "aws_instance" "app-dev" {
-   ami = lookup(var.ami, var.region)
-   instance_type = "t2.micro"
-   key_name = aws_key_pair.loginkey.key_name
-   count = 2
+  ami           = lookup(var.ami, var.region)
+  instance_type = "t2.micro"
+  key_name      = aws_key_pair.loginkey.key_name
+  count         = 2
 
-   tags = {
-     Name = element(var.tags,count.index)
-   }
+  tags = {
+    Name = element(var.tags, count.index)
+  }
 }
 
 output "timestamp" {

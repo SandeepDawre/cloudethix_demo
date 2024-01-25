@@ -2,18 +2,18 @@ terraform {
   required_version = ">= 0.13"
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
     random = {
-      source = "hashicorp/random"
+      source  = "hashicorp/random"
       version = "3.4.3"
     }
   }
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 provider "random" {
   # Configuration options
@@ -34,6 +34,6 @@ resource "aws_db_instance" "example" {
 }
 
 output "myrdspasswd" {
-  value = random_password.password.result
+  value     = random_password.password.result
   sensitive = true
 }

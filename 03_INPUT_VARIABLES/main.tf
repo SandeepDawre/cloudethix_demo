@@ -1,5 +1,5 @@
 resource "aws_security_group" "var_demo" {
-  name        = var.sg_name
+  name = var.sg_name
 
   ingress {
     from_port   = var.sg_https_port

@@ -1,12 +1,12 @@
 variable "ami_id" {
-  type    = string
+  type = string
 }
 variable "ec2_type" {
-  type    = string
+  type = string
 }
 variable "Key_name" {
-  type    = string
+  type = string
 }
 variable "security_groups" {
-  type    = list
+  type = list(any)
 }

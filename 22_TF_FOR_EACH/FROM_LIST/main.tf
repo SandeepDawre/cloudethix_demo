@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 /*
@@ -18,8 +18,8 @@ provider "aws" {
 */
 
 locals {
-  users = toset( ["Todd", "James", "Alice", "Dottie"] )
-} 
+  users = toset(["Todd", "James", "Alice", "Dottie"])
+}
 
 resource "aws_iam_user" "accounts" {
   for_each = local.users
@@ -49,7 +49,7 @@ resource "aws_instance" "server" {
 
   ami           = "ami-0b0dcb5067f052a63"
   instance_type = "t2.micro"
-  subnet_id     = each.key 
+  subnet_id     = each.key
 
   tags = {
     Name = "Server ${each.key}"

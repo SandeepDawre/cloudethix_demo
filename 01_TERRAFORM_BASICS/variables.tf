@@ -6,7 +6,7 @@ variable "INST_TYPE" {
   type = string
 }
 variable "EC2_TAG" {
-  type = map
+  type = map(any)
 }
 
 #THIS IS FOR SSH KEY

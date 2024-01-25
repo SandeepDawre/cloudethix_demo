@@ -15,11 +15,11 @@ resource "aws_security_group_rule" "this_ingress" {
 }
 
 resource "aws_security_group_rule" "this_egress" {
-  count             = length(var.egress_port)
-  type              = "egress"
-  from_port         = var.egress_port[count.index]
-  to_port           = var.egress_port[count.index]
-  protocol          = "tcp"
-  security_group_id = aws_security_group.this_sg.id
+  count                    = length(var.egress_port)
+  type                     = "egress"
+  from_port                = var.egress_port[count.index]
+  to_port                  = var.egress_port[count.index]
+  protocol                 = "tcp"
+  security_group_id        = aws_security_group.this_sg.id
   source_security_group_id = aws_security_group.this_sg.id
 }

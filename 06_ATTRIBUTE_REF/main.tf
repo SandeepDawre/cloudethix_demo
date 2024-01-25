@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 
@@ -18,7 +18,7 @@ resource "aws_instance" "myec2" {
 }
 
 resource "aws_eip" "lb" {
-  vpc      = true
+  vpc = true
 }
 
 resource "aws_eip_association" "eip_assoc" {
@@ -28,8 +28,8 @@ resource "aws_eip_association" "eip_assoc" {
 
 
 resource "aws_security_group" "allow_tls" {
-  name        = "cloudethix-TSG"
-  vpc_id      = "vpc-1bf43b66"
+  name   = "cloudethix-TSG"
+  vpc_id = "vpc-1bf43b66"
 
   ingress {
     from_port   = 443

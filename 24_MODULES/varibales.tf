@@ -29,8 +29,8 @@ variable "description" {
   type = string
 }
 variable "ingress_port" {
-  type = list
+  type = list(any)
 }
 variable "egress_port" {
-  type = list
+  type = list(any)
 }

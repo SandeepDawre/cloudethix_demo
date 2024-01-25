@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-    # Configuration options
+  # Configuration options
 }
 
 #THIS IS FOR SSH KEY
@@ -27,7 +27,7 @@ resource "aws_instance" "this_ec2" {
 
 #THIS IS FOR SG
 resource "aws_security_group" "this_sg" {
-  name   = var.SG_NAME
+  name = var.SG_NAME
 
   ingress {
     from_port   = var.HTTP_PORT

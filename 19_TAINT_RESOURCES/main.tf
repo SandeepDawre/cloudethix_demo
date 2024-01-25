@@ -6,18 +6,18 @@ terraform untaint aws_eip.lb
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.46.0"
     }
   }
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 resource "aws_eip" "lb" {
-  vpc      = true
+  vpc = true
 }
 
 output "eip" {
