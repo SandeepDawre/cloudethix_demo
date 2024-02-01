@@ -42,13 +42,19 @@ output "strengths" {
 }
 
 
-
-resource "aws_instance" "dev" {
-  for_each = {
+variable "i_types" {
+  type = map(any)
+  default = {
     "vm1" = "t2-small"
     "vm2" = "t2-medium"
     "vm3" = "t2-micro"
   }
+}
+
+
+
+resource "aws_instance" "dev" {
+  for_each = var.i_types
   ami           = "ami-082b5a644766e0e6f"
   instance_type = each.value
   tags = {

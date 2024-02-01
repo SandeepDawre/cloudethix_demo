@@ -30,6 +30,23 @@ output "users" {
   value = aws_iam_user.accounts
 }
 
+
+###### FOR GROUPS
+
+variable "group_names" {
+  type = list(any)
+  default = [ "Todd", "James", "Alice", "Dottie" ]
+}
+
+resource "aws_iam_group" "developers" {
+  for_each = var.group_names
+  name     = each.key
+  path = "/users/"
+}
+
+
+
+
 /*
 ========================================
 #FROM_LIST_EX_02
@@ -54,4 +71,19 @@ resource "aws_instance" "server" {
   tags = {
     Name = "Server ${each.key}"
   }
+}
+
+
+
+##### 
+
+variable "instance_type" {
+  type = list(any)
+  default = [ "t2.micro" , "t2.small" , "t2.nano" , "t3.small" ]
+}
+
+resource "aws_instance" "server" {
+  for_each = var.instance_type
+  ami           = "ami-0b0dcb5067f052a63"
+  instance_type = each.key
 }
