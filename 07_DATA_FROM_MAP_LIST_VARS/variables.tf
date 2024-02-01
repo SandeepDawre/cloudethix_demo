@@ -13,3 +13,4 @@ variable "my_map" {
     large  = "t2.large"
   }
 }
+

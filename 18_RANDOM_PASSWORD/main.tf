@@ -31,8 +31,10 @@ resource "aws_db_instance" "example" {
   engine            = "mysql"
   username          = "someone"
   password          = random_password.password.result
+  skip_final_snapshot  = true
 }
 
 output "rdspass" {
   value = random_password.password.result
+  sensitive = true
 }

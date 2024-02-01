@@ -17,13 +17,6 @@ resource "aws_key_pair" "this_ssh_key" {
   public_key = var.SSH_PUB_KEY
 }
 
-#THIS IS FOR EC2
-resource "aws_instance" "this_ec2" {
-  ami           = var.AMI_ID
-  instance_type = var.INST_TYPE
-  tags          = var.EC2_TAG
-}
-
 
 #THIS IS FOR SG
 resource "aws_security_group" "this_sg" {
@@ -43,4 +36,13 @@ resource "aws_security_group" "this_sg" {
     cidr_blocks = [var.CIDR_RANGE]
   }
 
+}
+
+#THIS IS FOR EC2
+resource "aws_instance" "this_ec2" {
+  ami             = var.AMI_ID
+  instance_type   = var.INST_TYPE
+  tags            = var.EC2_TAG
+  key_name        = aws_key_pair.this_ssh_key.key_name
+  security_groups = [aws_security_group.this_sg.name]
 }
